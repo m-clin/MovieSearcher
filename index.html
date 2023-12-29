@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movies</title>
+    <style>
+        #search-form {
+
+
+
+        }
+        #autocomplete {
+            width: 600px;
+
+        }
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+
+</head>
+
+<body>
+    <header>
+        <form id="search-form" method="get" action="/srch" novalidate="novalidate">
+            <label for="autocomplete"></label><input type="search" placeholder="Search movie" id="autocomplete" name="search" class="ui-autocomplete-input form-control" autocomplete="off">
+            <button type="submit" class="btn-search"><span>Search</span></button>
+        </form>
+    </header>
+    
+</body>
+</html>
