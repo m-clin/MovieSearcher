@@ -12,6 +12,12 @@ async function getUpcomingMovies() {
     updateMoviesTitle('Upcoming Movies');
 }
 
+async function searchMovie(query) {
+    const response = await fetch(`${apiUrl}/search/movie?api_key=${apiKey}&query=${query}`);
+    const data = await response.json();
+    displayMovies(data.results, 'movieContainer');
+    updateMoviesTitle(`Search Results for "${query}"`);
+}
 
 function displayMovies(movies, containerId) {
     const container = document.getElementById(containerId);
@@ -34,5 +40,13 @@ function updateMoviesTitle(title) {
     moviesTitle.textContent = title;
 }
 
+searchButton.addEventListener('click', () => {
+    const query = searchInput.value.trim();
+    if (query !== '') {
+        searchMovie(query);
+    } else {
+        getUpcomingMovies();
+    }
+});
 
 getUpcomingMovies();
