@@ -18,6 +18,19 @@
             <button id="searchButton">Search</button>
         </div>
 
+        <div>
+            <label for="genreFilter">Filter by Genre:</label>
+            <select id="genreFilter">
+                <option value="">All Genres</option>
+                <option value="28">Action</option>
+                <option value="12">Adventure</option>
+                <option value="12">Drama</option>
+                <!-- Add more genres based on your needs -->
+            </select>
+            <button onclick="applyGenreFilter()">Apply</button>
+        </div>
+
+        <h2 id="moviesTitle">Upcoming Movies</h2>
         <div class="movie-container" id="movieContainer">
             <div class="section-title">Upcoming Movies</div>
             <!-- Movies will be displayed here -->
