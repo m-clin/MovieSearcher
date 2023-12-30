@@ -1,3 +1,4 @@
+// Marclin R. Abarracoso BSIT3-B3
 const apiKey = '1bfdbff05c2698dc917dd28c08d41096';
 const apiUrl = 'https://api.themoviedb.org/3';
 const imageBaseUrl = 'https://image.tmdb.org/t/p/w500';
@@ -27,7 +28,6 @@ function displayMovies(movies, containerId) {
     container.innerHTML = '';
 
     movies.forEach(movie => {
-        // Check if the selected genre matches the movie's genre
         if (!selectedGenre || movie.genre_ids.includes(parseInt(selectedGenre))) {
             const movieElement = document.createElement('a');
             movieElement.classList.add('movie');
@@ -49,7 +49,6 @@ function updateMoviesTitle(title) {
 function applyGenreFilter() {
     const genreSelect = document.getElementById('genreFilter');
     selectedGenre = genreSelect.value;
-    // Call the searchMovie function with the selected genre
     searchMovie(searchInput.value, selectedGenre);
 }
 
