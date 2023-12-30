@@ -43,3 +43,16 @@ function displayMovieDetails(movie) {
 <p>Popularity: ${movie.popularity}</p>
 `;
 }
+
+function hideMovieDetails() {
+    const detailsContainer = document.getElementById('movieDetails');
+    detailsContainer.style.display = 'none';
+}
+
+async function init() {
+    const movieDetails = await getMovieDetails();
+    displayMovieDetails(movieDetails);
+    getSimilarMovies();
+}
+
+init();
